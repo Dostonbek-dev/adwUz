@@ -1,0 +1,27 @@
+{
+  "/user/*": {
+    "target": "http://localhost:8080",
+    "secure": false
+  },
+  "/adv-put-form/*": {
+    "target": "http://localhost:8080",
+    "secure": false
+  },
+  "/adv-put-form/**": {
+    "target": "http://localhost:8080",
+    "secure": false
+  },
+  "/advertising-form": {
+    "target": "http://localhost:8080",
+    "secure": false
+  },
+  "/contract-site/*": {
+    "target": "http://localhost:8080",
+    "secure": false
+  },
+  "/contract-site/**": {
+    "target": "http://localhost:8080",
+    "secure": false
+  }
+
+}

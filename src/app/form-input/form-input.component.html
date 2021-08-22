@@ -1,0 +1,56 @@
+<app-header></app-header>
+<div style=" margin-top: 120px">
+  <div class="container ">
+    <div class="row ">
+      <h3 >*Ushbu bo'limdan siz reklama berishingiz uchun kerakli
+        bo'limlardan tanlashingiz mumkin</h3>
+      <div class="col-md-4">
+          <label >Reklama berish turini tanlang: </label>
+      </div>
+      <div class="col-md-8 col-sm-8 col-lg-8">
+        <select class="form-select" [(ngModel)]="turini_Tanlang" (change)="turiniTanlang()" >
+          <option  *ngFor="let opt of turlar_kelishi" [value]="opt.id" [selected]="opt.name">{{opt.name}} </option>
+        </select>
+      </div>
+
+    </div>
+    <div class="row mt-2">
+      <div class="col-md-4">
+        <label >Reklama berish vositasini tanlang: </label>
+      </div>
+      <div class="col-md-8">
+        <select class="form-select" [(ngModel)]="vositani_tanlang" (change)="vositaniTanlang()" id="vositani_tanlang" disabled>
+          <option  *ngFor="let opt of vosita_kelishi" [value]="opt.id" [selected]="opt.name" >{{opt.name}}</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="container-fluid mt-5">
+      <div class="row mt-5">
+        <div class="col-md-3 offset-1"  *ngFor="let data of hamasi_kelishi ">
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="../../assets/img/tik-tok-logo-33090.png"  alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title" >Ijtimoiy tarmoq nomi: {{data.name}}</h5>
+              <h5 class="card-title" > Nechi kunturishi : {{data.days}}</h5>
+              <span class="card-title" >malumot:  {{data.description}}</span>
+              <div></div>
+              <button class="btn btn-primary"   (click)="addPrice(data)"  [disabled]="btnDisable">+</button>
+              <button class="btn btn-primary"   (click)="deletePrice(data)"  [disabled]="btnDisable">-</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="row mt-2 ml-4">
+      <div class="col-md-6 ml-5">
+        <h2>Umumiy narx: {{price}}</h2>
+        <button class="btn btn-success ml-2"  routerLink="/fizyur" >To'lov</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
